@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Permanent Marker", cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h1, h2 {
+    margin-bottom: 4rem;
+}
+
+.gameContainer {
+    width: 30rem;
+    height: 30rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    text-align: center;
+}
+
+.square {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000;
+    border-radius: .2rem;
+    display: flex;
+    font-size: 5rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.square:hover {
+    border: 5px solid #666;
+}
+
+.square:first-child, .square:nth-child(2), .square:nth-child(3) {
+    border-top: none;
+}
+
+.square:nth-child(3n + 1) {
+    border-left: none;
+}
+.square:nth-child(3n + 3) {
+    border-right: none;
+}
+.square:last-child,
+.square:nth-child(8),
+.square:nth-child(7) {
+  border-bottom: none;
+}
+
+
+
+.gameOver {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+.gameOverContent{
+    background-color: #eee;
+    width: 15rem;
+    height: 8rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 50px black;
+}
+
+.gameOverText {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+#restartBtn {
+    padding: 8px 15px;
+    color: #fff;
+    background-color: #000;
+    border-radius: .2rem;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#restartBtn:hover {
+    background-color: #fff;
+    color: #000;
+}
